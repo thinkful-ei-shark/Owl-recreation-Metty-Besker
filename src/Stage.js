@@ -1,28 +1,30 @@
 import React from 'react'
 
 
-function newStage(props){ 
-    
-    let image = <img src={props.avatar}/>;
+function Stage(props){ 
 
-    let popStage = (<div>
-        <h3>{props.name}</h3>
-        <div>
-            {image}
+  let p = props.participants.map(function (person) {
+    return (
+      <div className='person-stage'>
+        <h3>{person.name}</h3>
+        <div className='person-icon'>
+          <img src={person.avatar} alt={person.name} />
         </div>
-    </div>);
+      </div>
+      );
 
-        if(props.inSession && props.onStage){
-            {popStage}
-          
-}else{
-    console.log()
+  });
 
+
+  return (
+    <div className='stage'>
+      {p}
+    </div>
+  );
 
 }
 
-        }
 
-
-        export default newStage;
-    
+export default {
+  Stage
+};
