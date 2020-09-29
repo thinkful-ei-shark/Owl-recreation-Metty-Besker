@@ -25,6 +25,4 @@ function Stage(props){
 }
 
 
-export default {
-  Stage
-};
+export default Stage

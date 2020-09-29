@@ -1,31 +1,32 @@
 
-function participants(props){
-   
-    const participant = props.participants(person =>{
-         let stage = ""
+import React from 'react';
 
-    if(person.onStage){
-        stage = "onstage"
+function Participants(props) {
+
+  const participant = props.participants(person => {
+    let stage = ""
+    if (person.onStage) {
+      stage = "onstage"
     }
 
+    return (
+    <div className='person'>
+      <div className="name">
+        {person.name}
+        {stage}
+      </div>
 
-        return (<div>
-        <div className="name">
-            {person.name}
-            {stage}
-        </div>
+      <div className="avatar">
+        {person.avatar}
+      </div>
+    </div>)
+  })
 
-        <div className="avatar">
-            {person.avatar}
-        </div>
-        
-    </div>)})
-
-    return (<div className="participant">
-        {participant}
-    </div>);
+  return (<div className="participant">
+    {participant}
+  </div>);
 }
 
-export default{
-    participants
+export default {
+  Participants
 }
